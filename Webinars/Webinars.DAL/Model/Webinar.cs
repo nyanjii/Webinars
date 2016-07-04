@@ -10,7 +10,7 @@ namespace Webinars.DAL.Model
     {
         public string VideoUrl { get; set; }
 
-        public string LawId { get; set; }
+        public int LawId { get; set; }
         public Law Law { get; set; }
     }
 }
