@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webinars", "Webinars\Webinars.csproj", "{5847A33A-694D-4C13-AD88-6AAD81B8B1D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webinars.DAL", "Webinars.DAL\Webinars.DAL.csproj", "{73B80FC5-6C1C-4D02-8584-6B19C95D083A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5847A33A-694D-4C13-AD88-6AAD81B8B1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5847A33A-694D-4C13-AD88-6AAD81B8B1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5847A33A-694D-4C13-AD88-6AAD81B8B1D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73B80FC5-6C1C-4D02-8584-6B19C95D083A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B80FC5-6C1C-4D02-8584-6B19C95D083A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B80FC5-6C1C-4D02-8584-6B19C95D083A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B80FC5-6C1C-4D02-8584-6B19C95D083A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
