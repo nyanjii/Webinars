@@ -7,6 +7,6 @@ namespace Webinars.DAL.Repositories
 {
     public class LawRepository: RepositoryBase<Law>, ILawRepository
     {
-        LawRepository(WebinarContext context) : base(context) { }
+        public LawRepository(WebinarContext context) : base(context) { }
     }
 }

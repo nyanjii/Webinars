@@ -2,7 +2,7 @@
 
 namespace Webinars.DAL.Core
 {
-    interface IRepository<T>
+    public interface IRepository<T>
     {
         void Add(T item);
 

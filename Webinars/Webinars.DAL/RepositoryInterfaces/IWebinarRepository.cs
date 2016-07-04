@@ -3,7 +3,7 @@ using Webinars.DAL.Model;
 
 namespace Webinars.DAL.RepositoryInterfaces
 {
-    interface IWebinarRepository: IRepository<Webinar>
+    public interface IWebinarRepository: IRepository<Webinar>
     {
     }
 }
