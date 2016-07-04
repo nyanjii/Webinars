@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Webinars.DAL.Model
 {
-    public class EntittyBase
+    public class EntityBase
     {
         public int Id { get; set; }
         public string Name { get; set; }

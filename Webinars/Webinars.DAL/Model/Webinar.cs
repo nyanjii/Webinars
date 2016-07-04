@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Webinars.DAL.Model
 {
-    public class Webinar:EntittyBase
+    public class Webinar:EntityBase
     {
         public string VideoUrl { get; set; }
 
