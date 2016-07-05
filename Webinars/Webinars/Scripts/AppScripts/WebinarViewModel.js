@@ -62,7 +62,7 @@
     self.DeleteConfirmation = function () {
         $.arcticmodal({
             type: 'ajax',
-            url: 'Webinar/DeleteConfirmation',
+            url: 'DeleteConfirmation',
             content: {}
         });
     };
