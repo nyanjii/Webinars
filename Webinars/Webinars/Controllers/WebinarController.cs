@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using Webinars.DAL.Core;
 using Webinars.DAL.Model;
@@ -17,7 +14,6 @@ namespace Webinars.Controllers
         {
             uow = new UnitOfWork(new DAL.Context.WebinarContext());
         }
-        // GET: Webinar
         public ActionResult Index()
         {
             return View();
