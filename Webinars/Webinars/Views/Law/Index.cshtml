@@ -4,7 +4,15 @@
 }
 @using Webinars.DAL.Model
 @model IEnumerable<Law>
+
 <h2>Index</h2>
+<div>
+    <input  type="text" data-bind="value: singlelaw.Name"/>
+    <input type="text" data-bind="value: singlelaw.Description"/>
+    <button data-bind="click: addLaw">Add Law</button>
+</div>
+
+
 <table>
     <thead>
         <tr>
@@ -13,7 +21,7 @@
             <th>Description</th>
         </tr>
     </thead>
-<tbody data-bind="foreach :laws">
+<tbody data-bind="foreach: laws">
     <tr>
         <td data-bind="text: Id"></td>
         <td data-bind="text: Name"></td>
@@ -21,8 +29,7 @@
     </tr>
 
 </tbody>
-
 </table>
 @section scripts{
-@Scripts.Render("~/Scripts/LawViewModel.js")
-    }
+    @Scripts.Render("~/Scripts/LawViewModel.js")
+}

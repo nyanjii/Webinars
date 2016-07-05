@@ -5,7 +5,7 @@ using Webinars.DAL.Repositories;
 
 namespace Webinars.DAL.Context
 {
-    public class WebinarContextInitializer: DropCreateDatabaseAlways<WebinarContext>
+    public class WebinarContextInitializer: CreateDatabaseIfNotExists<WebinarContext>
     {
         protected override void Seed(WebinarContext context)
         {

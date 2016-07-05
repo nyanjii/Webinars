@@ -52,6 +52,7 @@ namespace Webinars.Controllers
         public void Create(Law model)
         {
             repo.LawRepository.Add(model);
+            repo.Save();
         }
     }
 }
