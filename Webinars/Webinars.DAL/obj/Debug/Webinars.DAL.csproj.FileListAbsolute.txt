@@ -1,0 +1,9 @@
+D:\Practice\Webinars\Webinars\Webinars.DAL\bin\Debug\Webinars.DAL.dll.config
+D:\Practice\Webinars\Webinars\Webinars.DAL\bin\Debug\Webinars.DAL.dll
+D:\Practice\Webinars\Webinars\Webinars.DAL\bin\Debug\Webinars.DAL.pdb
+D:\Practice\Webinars\Webinars\Webinars.DAL\bin\Debug\EntityFramework.dll
+D:\Practice\Webinars\Webinars\Webinars.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Practice\Webinars\Webinars\Webinars.DAL\bin\Debug\EntityFramework.xml
+D:\Practice\Webinars\Webinars\Webinars.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Practice\Webinars\Webinars\Webinars.DAL\obj\Debug\Webinars.DAL.dll
+D:\Practice\Webinars\Webinars\Webinars.DAL\obj\Debug\Webinars.DAL.pdb

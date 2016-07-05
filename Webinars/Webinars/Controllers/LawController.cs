@@ -16,7 +16,7 @@ namespace Webinars.Controllers
          
         public LawController()
         {
-            repo = new UnitOfWork(new WebinarContext());
+            repo = new UnitOfWork();
         }
 
         public ActionResult Index()
