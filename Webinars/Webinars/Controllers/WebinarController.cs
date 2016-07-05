@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Webinars.DAL.Core;
+using Webinars.DAL.Model;
+using Webinars.DAL.Repositories;
 
 namespace Webinars.Controllers
 {
@@ -12,7 +15,7 @@ namespace Webinars.Controllers
 
         public WebinarController()
         {
-            uow = new IUnitOfWork();
+            uow = new UnitOfWork();
         }
         // GET: Webinar
         public ActionResult Index()
@@ -29,7 +32,7 @@ namespace Webinars.Controllers
 
         public JsonResult GetWebinar(int id)
         {
-            return Json(bookClient.GetItem(id), JsonRequestBehavior.AllowGet);
+            return Json(uow.webinarRepository.Get(id), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -51,7 +54,7 @@ namespace Webinars.Controllers
         {
             if (webinar != null)
             {
-                uow.webinarRepository.Upadate(webinar);
+                uow.webinarRepository.Update(webinar);
                 return Json("Success");
             }
             else
