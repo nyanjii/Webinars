@@ -40,9 +40,9 @@ namespace Webinars.DAL.Repositories
 
         }
 
-        public UnitOfWork(WebinarContext context)
+        public UnitOfWork()
         {
-            _context = context;
+            _context = new WebinarContext();
         }
         public void Save()
         {

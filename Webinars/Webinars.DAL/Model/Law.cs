@@ -8,7 +8,7 @@ namespace Webinars.DAL.Model
 {
     public class Law:EntityBase
     {
-        public string Desription { get; set; }
+        public string Description { get; set; }
         IEnumerable<Webinar> Webinars { get; set; }
     }
 }
