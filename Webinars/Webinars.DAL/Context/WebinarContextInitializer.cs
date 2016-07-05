@@ -5,7 +5,7 @@ using Webinars.DAL.Repositories;
 
 namespace Webinars.DAL.Context
 {
-    public class WebinarContextInitializer: DropCreateDatabaseAlways<WebinarContext>
+    public class WebinarContextInitializer: CreateDatabaseIfNotExists<WebinarContext>
     {
         protected override void Seed(WebinarContext context)
         {
@@ -19,11 +19,11 @@ namespace Webinars.DAL.Context
             context.Laws.Add(l2);
             context.Laws.Add(l3);
 
-            Webinar w1 = new Webinar() { Name = "webi1", VideoUrl = "", Law = l1, LawId = l1.Id };
-            Webinar w2 = new Webinar() { Name = "webi2", VideoUrl = "", Law = l2, LawId = l2.Id };
-            Webinar w3 = new Webinar() { Name = "webi3", VideoUrl = "", Law = l1, LawId = l1.Id };
-            Webinar w4 = new Webinar() { Name = "webi4", VideoUrl = "", Law = l3, LawId = l3.Id };
-            Webinar w5 = new Webinar() { Name = "webi5", VideoUrl = "", Law = l2, LawId = l2.Id };
+            Webinar w1 = new Webinar() { Name = "webi1", VideoUrl = "https://www.youtube.com/embed/Col9Av1ydS4", Law = l1, LawId = l1.Id };
+            Webinar w2 = new Webinar() { Name = "webi2", VideoUrl = "https://www.youtube.com/embed/478Hav_WDJY", Law = l2, LawId = l2.Id };
+            Webinar w3 = new Webinar() { Name = "webi3", VideoUrl = "https://www.youtube.com/embed/INo_5WXov3A", Law = l1, LawId = l1.Id };
+            Webinar w4 = new Webinar() { Name = "webi4", VideoUrl = "https://www.youtube.com/embed/OYX7srTAT6k", Law = l3, LawId = l3.Id };
+            Webinar w5 = new Webinar() { Name = "webi5", VideoUrl = "https://www.youtube.com/embed/bZy8Nmf6f_Q", Law = l2, LawId = l2.Id };
 
             context.Webinars.Add(w1);
             context.Webinars.Add(w2);
