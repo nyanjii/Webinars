@@ -10,10 +10,14 @@ namespace Webinars.DAL.Context
 {
     public class WebinarContext: DbContext
     {
-        public WebinarContext() : base("WebinarDB") { }
+        public WebinarContext() : base("name=WebinarConnection") { }
 
-        DbSet<Webinar> Webinars { get; set; }
-        DbSet<Law> Laws { get; set; }
+        static WebinarContext()
+        {
+            Database.SetInitializer(new WebinarContextInitializer());
+        }
+        public DbSet<Webinar> Webinars { get; set; }
+        public DbSet<Law> Laws { get; set; }
 
     }
 }

@@ -15,7 +15,7 @@ namespace Webinars.Controllers
 
         public WebinarController()
         {
-            uow = new UnitOfWork();
+            uow = new UnitOfWork(new DAL.Context.WebinarContext());
         }
         // GET: Webinar
         public ActionResult Index()
@@ -26,13 +26,13 @@ namespace Webinars.Controllers
         [HttpGet]
         public JsonResult GetAllWebinars()
         { 
-            IEnumerable<Webinar> webinars = uow.webinarRepository.GetAll();
+            IEnumerable<Webinar> webinars = uow.WebinarRepository.GetAll();
             return Json(webinars, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetWebinar(int id)
         {
-            return Json(uow.webinarRepository.Get(id), JsonRequestBehavior.AllowGet);
+            return Json(uow.WebinarRepository.Get(id), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -40,7 +40,7 @@ namespace Webinars.Controllers
         {
             if (id != null)
             {
-                uow.webinarRepository.Delete(id);
+                uow.WebinarRepository.Delete(id);
                 return Json("Success");
             }
             else
@@ -54,7 +54,7 @@ namespace Webinars.Controllers
         {
             if (webinar != null)
             {
-                uow.webinarRepository.Update(webinar);
+                uow.WebinarRepository.Update(webinar);
                 return Json("Success");
             }
             else
@@ -68,7 +68,7 @@ namespace Webinars.Controllers
         {
             if (webinar != null)
             {
-                uow.webinarRepository.Add(webinar);
+                uow.WebinarRepository.Add(webinar);
                 return Json("Success");
             }
             else

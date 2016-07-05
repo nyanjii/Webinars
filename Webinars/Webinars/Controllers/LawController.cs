@@ -16,7 +16,7 @@ namespace Webinars.Controllers
          
         public LawController()
         {
-            repo = new UnitOfWork();
+            repo = new UnitOfWork(new WebinarContext());
         }
 
         public ActionResult Index()
@@ -26,32 +26,32 @@ namespace Webinars.Controllers
         [HttpGet]
         public JsonResult GetAllLaws()
         {
-            return Json(repo.lawRepository.GetAll(), JsonRequestBehavior.AllowGet);
+            return Json(repo.LawRepository.GetAll(), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public JsonResult Get(int id)
         {
-            return Json(repo.lawRepository.Get(id), JsonRequestBehavior.AllowGet);
+            return Json(repo.LawRepository.Get(id), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public void Delete(int id)
         {
-            var entity = repo.lawRepository.Get(id);
-            repo.lawRepository.Delete(entity);
+            var entity = repo.LawRepository.Get(id);
+            repo.LawRepository.Delete(entity);
         }
 
         [HttpPost]
         public void Edit(Law model)
         {
-            repo.lawRepository.Update(model);
+            repo.LawRepository.Update(model);
         }
 
         [HttpPost]
         public void Create(Law model)
         {
-            repo.lawRepository.Add(model);
+            repo.LawRepository.Add(model);
         }
     }
 }

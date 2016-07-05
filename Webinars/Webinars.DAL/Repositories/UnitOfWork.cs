@@ -15,7 +15,7 @@ namespace Webinars.DAL.Repositories
         private IWebinarRepository webinarRepo;
         private ILawRepository lawRepo;
 
-        public IWebinarRepository webinarRepository
+        public IWebinarRepository WebinarRepository
         {
             get
             {
@@ -27,7 +27,7 @@ namespace Webinars.DAL.Repositories
             }
         }
 
-        public ILawRepository lawRepository
+        public ILawRepository LawRepository
         {
             get
             {
@@ -40,9 +40,9 @@ namespace Webinars.DAL.Repositories
 
         }
 
-        public UnitOfWork()
+        public UnitOfWork(WebinarContext context)
         {
-            _context = new WebinarContext();
+            _context = context;
         }
         public void Save()
         {

@@ -1,0 +1,15 @@
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\Test.dll.config
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\Test.dll
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\Test.pdb
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\EntityFramework.dll
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\Webinars.DAL.dll
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\Webinars.DAL.pdb
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\EntityFramework.xml
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\obj\Debug\Test.dll
+C:\Users\Olga\Source\Repos\Webinars\Webinars\Test\obj\Debug\Test.pdb

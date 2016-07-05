@@ -9,8 +9,8 @@ namespace Webinars.DAL.Core
 { 
     public interface IUnitOfWork
     {
-            ILawRepository lawRepository { get; }
-            IWebinarRepository webinarRepository { get; }
+            ILawRepository LawRepository { get; }
+            IWebinarRepository WebinarRepository { get; }
             void Save();
      
     }
