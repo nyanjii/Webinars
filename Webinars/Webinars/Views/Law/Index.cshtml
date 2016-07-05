@@ -6,12 +6,20 @@
 @model IEnumerable<Law>
 
 <h2>Index</h2>
-<div>
-    <input  type="text" data-bind="value: singlelaw.Name"/>
-    <input type="text" data-bind="value: singlelaw.Description"/>
+<button class="admin-mode-button" data-bind="click: adminModeChange">Admin on/off</button>
+<div class="admin-mode" data-bind="if: mode">
+    <input type="text" data-bind="value: addinglaw.Name" />
+    <input type="text" data-bind="value: addinglaw.Description" />
     <button data-bind="click: addLaw">Add Law</button>
+    <button data-bind="click: cancel">Cancel</button>
 </div>
 
+<div class="admin-mode" data-bind="if: mode">
+    <input type="text" data-bind="value: editinglaw.Name" />
+    <input type="text" data-bind="value: editinglaw.Description" />
+    <button data-bind="click: save">Save</button>
+    <button data-bind="click: cancel">Cancel</button>
+</div>
 
 <table>
     <thead>
@@ -21,14 +29,16 @@
             <th>Description</th>
         </tr>
     </thead>
-<tbody data-bind="foreach: laws">
-    <tr>
-        <td data-bind="text: Id"></td>
-        <td data-bind="text: Name"></td>
-        <td data-bind="text: Description"></td>
-    </tr>
+    <tbody data-bind="foreach: laws">
+        <tr>
+            <td data-bind="text: Id"></td>
+            <td data-bind="text: Name"></td>
+            <td data-bind="text: Description"></td>
+            <td data-bind="if: $root.mode" class="admin-mode"><button data-bind="click: $root.removeLaw">Delete</button></td>
+            <td data-bind="if: $root.mode" class="admin-mode"><button data-bind="click: $root.editLaw">Edit</button></td>
+        </tr>
 
-</tbody>
+    </tbody>
 </table>
 @section scripts{
     @Scripts.Render("~/Scripts/LawViewModel.js")

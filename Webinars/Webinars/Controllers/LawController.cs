@@ -36,16 +36,24 @@ namespace Webinars.Controllers
         }
 
         [HttpPost]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
-            //var entity = repo.LawRepository.Get(id);
             repo.LawRepository.Delete(id);
+            repo.Save();
+            return Json("Success");
         }
 
+
         [HttpPost]
-        public void Edit(Law model)
+        public ActionResult Edit(Law law)
         {
-            repo.LawRepository.Update(model);
+            if (law != null) {
+                repo.LawRepository.Update(law);
+                repo.Save();
+                return Json("Success");
+            }
+            else
+                return Json("Error");
         }
 
         [HttpPost]
