@@ -184,7 +184,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\media\loading.gif" />
+    <Content Include="Content\loading.gif" />
     <Content Include="Content\themes\dark.css" />
     <Content Include="Content\jquery.arcticmodal-0.3.css" />
     <Content Include="Content\themes\simple.css" />
@@ -253,6 +253,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Law\Index.cshtml" />
     <Content Include="Views\Webinar\Index.cshtml" />
+    <Content Include="Views\Webinar\DeleteConfirmationPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

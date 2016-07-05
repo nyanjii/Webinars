@@ -1,9 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@section Scripts{ 
-    @Scripts.Render("~/Scripts/AppScripts/WebinarViewModel.js")
-}
+
 
 <!DOCTYPE html>
 
@@ -13,9 +11,10 @@
     <title>Index</title>
 </head>
 <body>
-    <h3>slrfjsldflkd</h3>
+    <h3>WEBINARS</h3>
+
     <button class="admin-mode-button">Admin</button>
-    <div class="admin-mode" id="create-zone"  data-bind="with: $root.cWebinar">
+    <div class="admin-mode" id="create-zone" data-bind="with: $root.cWebinar">
         <input type="text" data-bind="value: Name" />
         <input type="text" data-bind="value: VideoUrl" />
         <button data-bind="click: $parent.createNewWebinar">Create</button>
@@ -27,7 +26,7 @@
         <button data-bind="click: $root.editWebinar">Edit</button>
         <button id="cancel-edit">Cancel</button>
     </div>
-    <div> 
+    <div>
         <table>
             <thead>
                 <tr>
@@ -48,3 +47,6 @@
 
 </body>
 </html>
+@section Scripts{
+    @Scripts.Render("~/Scripts/AppScripts/WebinarViewModel.js");	
+}

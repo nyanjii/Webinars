@@ -21,7 +21,7 @@ namespace Webinars.Controllers
 
         [HttpGet]
         public JsonResult GetAllWebinars()
-        { 
+        {
             IEnumerable<Webinar> webinars = uow.WebinarRepository.GetAll();
             return Json(webinars, JsonRequestBehavior.AllowGet);
         }
@@ -34,9 +34,9 @@ namespace Webinars.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-                uow.WebinarRepository.Delete(id);
-                uow.Save();
-                return Json("Success");
+            uow.WebinarRepository.Delete(id);
+            uow.Save();
+            return Json("Success");
         }
 
         [HttpPost]
@@ -69,6 +69,10 @@ namespace Webinars.Controllers
             }
         }
 
-
+        [HttpGet]
+        public PartialViewResult DeleteConfirmation()
+        {
+            return PartialView("DeleteConfirmationPartial");
+        }
     }
 }

@@ -29,6 +29,7 @@
     };
     self.DeleteWebinar = function () {
         self.PostData('Delete', { id: this.Id });
+        self.DeleteConfirmation();
     };
     self.GetAllWebinars = function () {
         $.get('/Webinar/GetAllWebinars', function (data) {
@@ -58,6 +59,14 @@
             }
         });
     }
+    self.DeleteConfirmation = function () {
+        $.arcticmodal({
+            type: 'ajax',
+            url: 'Webinar/DeleteConfirmation',
+            content: {}
+        });
+    };
+
     return {
         webinars: self.webinarCollection,
         getAllWebinars: self.GetAllWebinars,
@@ -79,6 +88,8 @@ $(document).ready(function () {
     $(".admin-mode").hide();
 });
 
+
+
 $("#cancel-edit").click(function () {
     $("#edit-zone").hide();
 });
@@ -91,6 +102,5 @@ $('.admin-mode-button').click(function () {
     else {
         WebinarViewModel.adminMode(true);
         $(".admin-mode").fadeIn();
-
     }
 });
