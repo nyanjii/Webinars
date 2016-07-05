@@ -19,3 +19,15 @@ C:\Users\Olga\Source\Repos\Webinars\Webinars\Webinars.DAL\bin\Debug\ru\EntityFra
 C:\Users\Olga\Source\Repos\Webinars\Webinars\Webinars.DAL\obj\Debug\Webinars.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Olga\Source\Repos\Webinars\Webinars\Webinars.DAL\obj\Debug\Webinars.DAL.dll
 C:\Users\Olga\Source\Repos\Webinars\Webinars\Webinars.DAL\obj\Debug\Webinars.DAL.pdb
+D:\WEBINARS\Webinars\Webinars.DAL\bin\Debug\Webinars.DAL.dll.config
+D:\WEBINARS\Webinars\Webinars.DAL\bin\Debug\Webinars.DAL.dll
+D:\WEBINARS\Webinars\Webinars.DAL\bin\Debug\Webinars.DAL.pdb
+D:\WEBINARS\Webinars\Webinars.DAL\bin\Debug\EntityFramework.dll
+D:\WEBINARS\Webinars\Webinars.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\WEBINARS\Webinars\Webinars.DAL\bin\Debug\EntityFramework.xml
+D:\WEBINARS\Webinars\Webinars.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\WEBINARS\Webinars\Webinars.DAL\bin\Debug\ru\EntityFramework.resources.dll
+D:\WEBINARS\Webinars\Webinars.DAL\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+D:\WEBINARS\Webinars\Webinars.DAL\obj\Debug\Webinars.DAL.csprojResolveAssemblyReference.cache
+D:\WEBINARS\Webinars\Webinars.DAL\obj\Debug\Webinars.DAL.dll
+D:\WEBINARS\Webinars\Webinars.DAL\obj\Debug\Webinars.DAL.pdb

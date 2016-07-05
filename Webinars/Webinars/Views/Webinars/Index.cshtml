@@ -1,0 +1,28 @@
+﻿@{ 
+    @Scripts.Render("~/Scripts/AppScripts/WebinarViewModel.js")
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table data-bind="with: webinarCollection">
+            <thead>
+
+            </thead>
+            <tbody data-bind="foreach: webinars">
+                <tr data-bind="Name"></tr>
+                <tr data-bind="Url"></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
