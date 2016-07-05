@@ -1,11 +1,12 @@
 ﻿var LawViewModel= function(){
 
     this.laws = ko.observableArray("");
-    this.GetAll()
+    this.GetAll = function()
     {
         $.get("/Law/GetAllLaws",
             function (data) {
-            laws = ko.mapping.fromJS(data);
+                laws = ko.mapping.fromJS(data, {});
+                console.log(laws()[0])
                     }
                 )
     }
