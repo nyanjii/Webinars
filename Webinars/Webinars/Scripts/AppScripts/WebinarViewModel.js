@@ -1,5 +1,6 @@
 ﻿WebinarViewModel = function () {
     var self = this;
+    self.adminModeEnabled = ko.observable(false);
     self.webinarCollection = ko.observableArray();
     self.editableWebinar = ko.observable({
         Id: ko.observable(""),
@@ -18,10 +19,13 @@
             VideoUrl: createdWebinar.VideoUrl(),
             LawId: 1
         });
+        self.createdWebinar.Name("");
+        self.createdWebinar.VideoUrl("");
     };
     self.EditWebinar = function () {
         var unmapped = ko.mapping.toJS(self.editableWebinar);
         self.PostData('Edit', { Webinar: unmapped });
+        $("#edit-zone").fadeOut();
     };
     self.DeleteWebinar = function () {
         self.PostData('Delete', { id: this.Id });
@@ -33,6 +37,7 @@
         });
     };
     self.GetWebinar = function () {
+        $("#edit-zone").fadeIn();
         $.get('/Webinar/GetWebinar', { Id: this.Id }, function (data) {
             var res = ko.mapping.fromJS(data);
             self.editableWebinar(res);
@@ -62,6 +67,7 @@
         eWebinar: self.editableWebinar,
         editWebinar: self.EditWebinar,
         deleteWebinar: self.DeleteWebinar,
+        adminMode: self.adminModeEnabled
     };
 }()
 
@@ -69,4 +75,22 @@
 $(document).ready(function () {
     ko.applyBindings(WebinarViewModel);
     WebinarViewModel.getAllWebinars();
+    $("#edit-zone").hide();
+    $(".admin-mode").hide();
+});
+
+$("#cancel-edit").click(function () {
+    $("#edit-zone").hide();
+});
+
+$('.admin-mode-button').click(function () {
+    if (WebinarViewModel.adminMode()){
+        WebinarViewModel.adminMode(false);
+        $(".admin-mode").fadeOut();
+    }
+    else {
+        WebinarViewModel.adminMode(true);
+        $(".admin-mode").fadeIn();
+
+    }
 });
