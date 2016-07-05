@@ -1,10 +1,9 @@
 ﻿WebinarViewModel = function () {
     var self = this;
     self.webinarCollection = ko.observableArray();
-    self.lawsCollection = ko.observableArray();
     self.editableWebinar = ko.observable({
         Id: ko.observable(""),
-        Name: ko.observable("lol"),
+        Name: ko.observable(""),
         VideoUrl: ko.observable(""),
         Law: ko.observable(""),
         LawId: ko.observable("")
@@ -14,58 +13,18 @@
         VideoUrl: ko.observable(""),
     };
     self.CreateNewWebinar = function () {
-        $.ajax({
-            type: 'POST',
-            url: '/Webinar/Create',
-            dataType: 'json',
-            data: {
-                Name: createdWebinar.Name(),
-                VideoUrl: createdWebinar.VideoUrl(),
-                LawId: 1
-            },
-            success: function (data) {
-                console.log("success");
-                self.GetAllWebinars();
-            },
-            error: function (xhr, ajaxOptions, error) {
-                console.log("error. create");
-            }
+        self.PostData('Create', {
+            Name: createdWebinar.Name(),
+            VideoUrl: createdWebinar.VideoUrl(),
+            LawId: 1
         });
     };
     self.EditWebinar = function () {
         var unmapped = ko.mapping.toJS(self.editableWebinar);
-        $.ajax({
-            type: 'POST',
-            url: '/Webinar/Edit',
-            dataType: 'json',
-            data: {
-                Webinar: unmapped
-            },
-            success: function (data) {
-                console.log("edit success");
-                self.GetAllWebinars();
-            },
-            error: function (xhr, ajaxOptions, error) {
-                console.log("error. edit");
-            }
-        });
+        self.PostData('Edit', { Webinar: unmapped });
     };
     self.DeleteWebinar = function () {
-        $.ajax({
-            type: 'POST',
-            url: '/Webinar/Delete',
-            dataType: 'json',
-            data: {
-                id: this.Id
-            },
-            success: function (data) {
-                console.log("delete success");
-                self.GetAllWebinars();
-            },
-            error: function (xhr, ajaxOptions, error) {
-                console.log("error. delete");
-            }
-        });
+        self.PostData('Delete', { id: this.Id });
     };
     self.GetAllWebinars = function () {
         $.get('/Webinar/GetAllWebinars', function (data) {
@@ -79,6 +38,21 @@
             self.editableWebinar(res);
         });
     };
+    self.PostData = function (action, dataObj) {
+        $.ajax({
+            type: 'POST',
+            url: '/Webinar/' + action,
+            dataType: 'json',
+            data: dataObj,
+            success: function (data) {
+                console.log(action + " success");
+                self.GetAllWebinars();
+            },
+            error: function (xhr, ajaxOptions, error) {
+                console.log(action + " error");
+            }
+        });
+    }
     return {
         webinars: self.webinarCollection,
         getAllWebinars: self.GetAllWebinars,

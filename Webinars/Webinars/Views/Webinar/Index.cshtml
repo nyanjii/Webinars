@@ -17,12 +17,10 @@
     <div data-bind="with: cWebinar">
         <input type="text" data-bind="value: Name" />
         <input type="text" data-bind="value: VideoUrl" />
-        <span data-bind="text: Name"></span>
         <button data-bind="click: $parent.createNewWebinar">Create</button>
     </div>
 
     <div data-bind="with: $root.eWebinar">
-        <span data-bind="text: Name"></span>
         <input type="text" data-bind="value: Name" />
             <input type="text" data-bind="value: VideoUrl" />
             <button data-bind="click: $root.editWebinar">Edit</button>
