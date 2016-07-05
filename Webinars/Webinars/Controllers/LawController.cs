@@ -38,8 +38,8 @@ namespace Webinars.Controllers
         [HttpPost]
         public void Delete(int id)
         {
-            var entity = repo.LawRepository.Get(id);
-            repo.LawRepository.Delete(entity);
+            //var entity = repo.LawRepository.Get(id);
+            repo.LawRepository.Delete(id);
         }
 
         [HttpPost]

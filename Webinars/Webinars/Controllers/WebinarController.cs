@@ -36,18 +36,11 @@ namespace Webinars.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(Webinar id)
+        public ActionResult Delete(int id)
         {
-            if (id != null)
-            {
                 uow.WebinarRepository.Delete(id);
                 uow.Save();
                 return Json("Success");
-            }
-            else
-            {
-                return Json("An Error Has occured");
-            }
         }
 
         [HttpPost]

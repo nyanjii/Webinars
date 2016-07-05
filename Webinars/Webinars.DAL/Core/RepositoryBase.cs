@@ -27,9 +27,9 @@ namespace Webinars.DAL.Core
             context.Entry(item).State = EntityState.Modified;
         }
 
-        public void Delete(T item)
+        public void Delete(int id)
         {
-            context.Entry(item).State = EntityState.Deleted;
+            context.Entry(this.Get(id)).State = EntityState.Deleted;
         }
 
         public T Get(int id)

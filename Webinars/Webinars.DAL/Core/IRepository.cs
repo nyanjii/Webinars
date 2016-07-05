@@ -8,7 +8,7 @@ namespace Webinars.DAL.Core
 
         void Update(T item);
 
-        void Delete(T item);
+        void Delete(int id);
 
         T Get(int id);
 
