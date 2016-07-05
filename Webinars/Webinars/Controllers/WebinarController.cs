@@ -41,6 +41,7 @@ namespace Webinars.Controllers
             if (id != null)
             {
                 uow.WebinarRepository.Delete(id);
+                uow.Save();
                 return Json("Success");
             }
             else
@@ -55,6 +56,7 @@ namespace Webinars.Controllers
             if (webinar != null)
             {
                 uow.WebinarRepository.Update(webinar);
+                uow.Save();
                 return Json("Success");
             }
             else
@@ -69,6 +71,7 @@ namespace Webinars.Controllers
             if (webinar != null)
             {
                 uow.WebinarRepository.Add(webinar);
+                uow.Save();
                 return Json("Success");
             }
             else

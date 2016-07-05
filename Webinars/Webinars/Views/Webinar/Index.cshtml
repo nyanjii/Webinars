@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{ 
+    @Scripts.Render("~/Scripts/AppScripts/WebinarViewModel.js")
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>slrfjsldflkd</h3>
+    <div data-bind="with: cWebinar">
+        <input type="text" data-bind="value: Name" />
+        <input type="text" data-bind="value: VideoUrl" />
+        <span data-bind="text: Name"></span>
+        <button data-bind="click: $parent.createNewWebinar">Create</button>
+    </div>
+    <div> 
+        <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>url</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: webinars">
+                <tr>
+                    <td data-bind="text: Name"></td>
+                    <td data-bind="text: VideoUrl"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
