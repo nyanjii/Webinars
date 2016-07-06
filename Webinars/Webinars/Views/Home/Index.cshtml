@@ -2,27 +2,30 @@
     ViewBag.Title = "Home Page";
 }
 
-<table>
-        <tr data-bind="template: { name: 'law-tab-template', foreach: lawsArray }"></tr>
-        <tr colspan="3">
-            <td rowspan="2" data-bind="template: { name: 'single-video-template', data: webinar }"></td>
-            <td data-bind="template: {name: 'list-item-video-template', foreach: webinars}"></td>
-        </tr>
-</table>
+<div class="content">
+    <div class="content-header">
+        <div class="tab-panel">
+            <ul data-bind="template: { name: 'law-tab-template', foreach: lawsArray }">
+            </ul>
+        </div>
+    </div>
+    <div class="content-body">
+        <div class="left-col">
+            <div class="video-player" data-bind="template: { name: 'single-video-template', data: webinar }"></div>
+        </div>
+        <div class="right-col">
+            <div class="video-list" data-bind="template: {name: 'list-item-video-template', foreach: webinars}"></div>
+        </div>
+    </div>
+</div>
 
-
+<!--Page templates-->
 <script type="text/html" id="law-tab-template">
-            <td data-bind="click: $parent.getAllWebinars.bind($data)">
-        <img src="../../Content/Images/icon-t36.png" />
-        <p>Вебинары по <span data-bind="text: Name"></span></p>
-            </td>
+       <li class="tab-item" data-bind="click: $parent.getAllWebinars">
+                <img src="../../Content/Images/icon-t36.png" />
+                <p>Вебинары по <span data-bind="text: Name"></span></p>
+        </li>
 </script>
-
-@*<div data-bind="template: {name: 'list-item-video-template', foreach: webinars}"></div>*@
-
-@*<div>
-<div data-bind="template: { name: 'single-video-template', data: webinar }"></div>
-</div>*@
 
 <script type="text/html" id="single-video-template">
     <iframe width="560" height="315" 
@@ -31,15 +34,11 @@
     </iframe>
 </script>
 
-
-
 <script type="text/html" id="list-item-video-template">
-    <tr data-bind="click: $parent.playWebinar.bind($data)">
-        <td>
+    <li class="video-list-item" data-bind="click: $parent.playWebinar">
         <span data-bind="text: Name"></span>
         <img data-bind="attr: {src: VideoImageUrl}" />
-        </td>
-    </tr>
+    </li>
 </script>
 
 
