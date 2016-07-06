@@ -31,8 +31,7 @@
     });
 
     self.PlayWebinar = function (data) {
-        self.chosenWebinar()
-            .VideoUrl(data.VideoUrl());
+        self.chosenWebinar({VideoUrl:(data.VideoUrl())});
     };
     return {
         laws: self.lawsArray,

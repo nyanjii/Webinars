@@ -34,9 +34,9 @@
 
 
 <script type="text/html" id="list-item-video-template">
-    <tr>
+    <tr data-bind="click: $parent.playWebinar.bind($data)">
         <td>
-    <span data-bind="text: Name"></span>
+         <span data-bind="text: Name"></span>
             <img data-bind="attr: {src: VideoImageUrl}" />
         </td>
     </tr>
