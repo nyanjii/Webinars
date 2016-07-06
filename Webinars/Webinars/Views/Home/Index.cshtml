@@ -4,6 +4,10 @@
 
 <table>
         <tr data-bind="template: { name: 'law-tab-template', foreach: lawsArray }"></tr>
+        <tr colspan="3">
+            <td rowspan="2" data-bind="template: { name: 'single-video-template', data: webinar }"></td>
+            <td data-bind="template: {name: 'list-item-video-template', foreach: webinars}"></td>
+        </tr>
 </table>
 
 
@@ -14,11 +18,11 @@
             </td>
 </script>
 
-<div data-bind="template: {name: 'list-item-video-template', foreach: webinars}"></div>
+@*<div data-bind="template: {name: 'list-item-video-template', foreach: webinars}"></div>*@
 
-<div>
+@*<div>
 <div data-bind="template: { name: 'single-video-template', data: webinar }"></div>
-</div>
+</div>*@
 
 <script type="text/html" id="single-video-template">
     <iframe width="560" height="315" 
@@ -30,10 +34,12 @@
 
 
 <script type="text/html" id="list-item-video-template">
-    <div data-bind="click: $parent.playWebinar">
+    <tr data-bind="click: $parent.playWebinar.bind($data)">
+        <td>
         <span data-bind="text: Name"></span>
         <img data-bind="attr: {src: VideoImageUrl}" />
-    </div>
+        </td>
+    </tr>
 </script>
 
 
