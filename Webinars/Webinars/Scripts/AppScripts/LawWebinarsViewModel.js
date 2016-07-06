@@ -27,7 +27,7 @@
         });
     };
     self.chosenWebinar = ko.observable({
-        VideoUrl: "",
+        VideoUrl:ko.observable("")
     });
 
     self.PlayWebinar = function () {
