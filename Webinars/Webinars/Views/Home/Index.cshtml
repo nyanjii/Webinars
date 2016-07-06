@@ -2,13 +2,15 @@
     ViewBag.Title = "Home Page";
 }
 
+
+
 <div data-bind="template: { name: 'law-tab-template', foreach: lawsArray }"></div>
 <script type="text/html" id="law-tab-template">
         <img src="../../Content/Images/icon-t36.png" />
         <p>Вебинары по <span data-bind="text: Name"></span></p>
 </script>
 
-
+<div data-bind="template: {name: 'list-item-video-template', foreach: webinars}"></div>
 
 <div data-bind="template: { name: 'single-video-template', data: webinar }"></div>
 
@@ -17,6 +19,13 @@
             data-bind="attr: {src : VideoUrl}"
             frameborder="0" allowfullscreen>
     </iframe>
+</script>
+
+
+
+<script type="text/html" id="list-item-video-template">
+    <span data-bind="text: Name"></span>
+    <img data-bind="attr: {src: VideoImageUrl}"/>
 </script>
 
 
