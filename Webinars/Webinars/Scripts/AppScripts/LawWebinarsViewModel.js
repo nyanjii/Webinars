@@ -30,9 +30,11 @@
         VideoUrl: ko.observable(""),
     });
 
-    self.PlayWebinar = function (data) {
-        self.chosenWebinar()
-            .VideoUrl(data.VideoUrl());
+    self.PlayWebinar = function () {
+        //var url = data.VideoUrl();
+        //self.chosenWebinar()
+        //    .VideoUrl(url);
+        console.log('click');
     };
     return {
         laws: self.lawsArray,
