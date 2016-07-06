@@ -2,6 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
+<div data-bind="template: { name: 'law-tab-template', foreach: lawsArray }"></div>
 <script type="text/html" id="law-tab-template">
         <img src="../../Content/Images/icon-t36.png" />
         <p>Вебинары по <span data-bind="text: Name"></span></p>
@@ -19,18 +20,8 @@
 </script>
 
 
-
-
-
-
-
-
 @section Scripts{
     @Scripts.Render("~/Scripts/AppScripts/LawWebinarsViewModel.js");
 }
-<div data-bind="template: { name: 'law-tab-template', foreach: lawsArray }"></div>
 
-@section scripts
-    {
-  @Scripts.Render("~/Scripts/AppScripts/LawWebinarsViewModel.js")
-    }
+
