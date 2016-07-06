@@ -6,19 +6,19 @@
         $.get('/Law/GetAllLaws', function (data) {
             var res = ko.mapping.fromJS(data)
             self.lawsArray(res());
-        });
-    };
-    self.GetAllWebinarsByLaw = function () {
-        $.get('/Home/GetWebinarsByLaw', {id: this.Id}, function (data) {
-            var res = ko.mapping.fromJS(data)
-            self.currentWebinarsArray(res());
+            self.GetAllWebinarsByLaw(self.lawsArray()[0]);
         });
     };
     self.chosenWebinar = ko.observable({
-        Id: ko.observable("123"),
-        Name: ko.observable("sdfrfwf"),
-        VideoUrl: ko.observable("https://www.youtube.com/embed/Tv9YoYCKNoE"),
+        VideoUrl: "",
     });
+    self.GetAllWebinarsByLaw = function (data) {
+        $.get('/Home/GetWebinarsByLaw', { id: data.Id() }, function (resdata)
+        {
+            var res = ko.mapping.fromJS(resdata);
+            self.currentWebinarsArray(res());
+            self.chosenWebinar(res()[0]);
+        })};
     self.PlayWebinar = function () {
         self.chosenWebinar()
             .Id(this.Id)
