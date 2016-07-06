@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Webinars.DAL.Core
 {
@@ -13,5 +14,6 @@ namespace Webinars.DAL.Core
         T Get(int id);
 
         IEnumerable<T> GetAll();
+
     }
 }

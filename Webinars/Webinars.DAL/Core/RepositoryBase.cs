@@ -3,6 +3,7 @@ using System.Linq;
 using Webinars.DAL.Model;
 using Webinars.DAL.Context;
 using System.Data.Entity;
+using System;
 
 namespace Webinars.DAL.Core
 {
@@ -46,6 +47,7 @@ namespace Webinars.DAL.Core
         {
             context.SaveChanges();
         }
+   
 
     }
 }
