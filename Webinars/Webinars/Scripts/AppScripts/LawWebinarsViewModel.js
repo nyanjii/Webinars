@@ -10,31 +10,29 @@
         });
     };
     self.GetAllWebinarsByLaw = function (data) {
-        $.get('/Home/GetWebinarsByLaw', { id: data.Id() }, function (data) {
+        $.get('/Home/GetWebinarsByLaw', { id: data.Id }, function (data) {
             var res = ko.mapping.fromJS(data)
             $.each(res(), function (index, value) {
-                console.log(value);
                 value.VideoImageUrl = ko.computed(function () {
                     url = this.VideoUrl();
                     var start = url.indexOf("embed/") + 6;
                     var videoId = url.substring(start, url.length);
                     var result = "http://img.youtube.com/vi/" + videoId + "/1.jpg";
+                    console.log(result);
                     return result;
                 }, value);
             });
-            self.chosenWebinar(res()[0]);
             self.currentWebinarsArray(res());
+            self.chosenWebinar(self.currentWebinarsArray()[0]);
         });
     };
     self.chosenWebinar = ko.observable({
-        VideoUrl:ko.observable("")
+        VideoUrl: ko.observable(""),
     });
 
-    self.PlayWebinar = function () {
+    self.PlayWebinar = function (data) {
         self.chosenWebinar()
-            .Id(this.Id)
-            .Name(this.Name)
-            .VideoUrl(this.VideoUrl);
+            .VideoUrl(data.VideoUrl());
     };
     return {
         laws: self.lawsArray,
@@ -50,5 +48,5 @@
 $(document).ready(function () {
     ko.applyBindings(LawWebinarsViewModel);
     LawWebinarsViewModel.getAllLaws();
-    LawWebinarsViewModel.getAllWebinars(0);
+    //LawWebinarsViewModel.getAllWebinars(0);
 });
