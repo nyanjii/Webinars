@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using Webinars.DAL.Context;
 using Webinars.DAL.Core;
 using Webinars.DAL.Model;
 using Webinars.DAL.Repositories;
