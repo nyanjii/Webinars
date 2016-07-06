@@ -12,7 +12,7 @@ namespace Webinars.Controllers
 
         public WebinarController()
         {
-            uow = new UnitOfWork(new DAL.Context.WebinarContext());
+            uow = new UnitOfWork(new WebinarContext());
         }
         public ActionResult Index()
         {

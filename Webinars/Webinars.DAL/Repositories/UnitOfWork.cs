@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Webinars.DAL.Context;
+﻿using Webinars.DAL.Context;
 using Webinars.DAL.Core;
 using Webinars.DAL.RepositoryInterfaces;
 
