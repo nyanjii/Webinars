@@ -7,6 +7,27 @@
         <p>Вебинары по <span data-bind="text: Name"></span></p>
 </script>
 
+
+
+<div data-bind="template: { name: 'single-video-template', data: webinar }"></div>
+
+<script type="text/html" id="single-video-template">
+    <iframe width="560" height="315" 
+            data-bind="attr: {src : VideoUrl}"
+            frameborder="0" allowfullscreen>
+    </iframe>
+</script>
+
+
+
+
+
+
+
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/AppScripts/LawWebinarsViewModel.js");
+}
 <div data-bind="template: { name: 'law-tab-template', foreach: lawsArray }"></div>
 
 @section scripts
