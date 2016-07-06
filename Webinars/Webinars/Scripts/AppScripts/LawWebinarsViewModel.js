@@ -14,10 +14,27 @@
             self.currentWebinarsArray(res());
         });
     };
+    self.chosenWebinar = ko.observable({
+        Id: ko.observable("123"),
+        Name: ko.observable("sdfrfwf"),
+        VideoUrl: ko.observable("https://www.youtube.com/embed/Tv9YoYCKNoE"),
+    });
+    self.PlayWebinar = function () {
+        self.chosenWebinar()
+            .Id(this.Id)
+            .Name(this.Name)
+            .VideoUrl(this.VideoUrl);
+    };
     return {
         laws: self.lawsArray,
         webinars: self.webinarsArray,
         getAllLaws: self.GetAllLaws,
-        getAllWebinars: self.GetAllWebinarsByLaw
+        getAllWebinars: self.GetAllWebinarsByLaw,
+        webinar: self.chosenWebinar,
+        playWebinar: self.PlayWebinar
     };
 }()
+
+$(document).ready(function () {
+    ko.applyBindings(LawWebinarsViewModel);
+});
