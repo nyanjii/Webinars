@@ -21,3 +21,8 @@
         getAllWebinars: self.GetAllWebinarsByLaw
     };
 }()
+
+$(document).ready(function () {
+    ko.applyBindings(LawWebinarsViewModel);
+    LawWebinarsViewModel.getAllLaws();
+});
