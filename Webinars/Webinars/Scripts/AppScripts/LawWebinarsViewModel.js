@@ -6,6 +6,7 @@
         $.get('/Law/GetAllLaws', function (data) {
             var res = ko.mapping.fromJS(data)
             self.lawsArray(res());
+            self.GetAllWebinarsByLaw(self.lawsArray()[0]);
         });
     };
     self.GetAllWebinarsByLaw = function (data) {
@@ -21,14 +22,14 @@
                     return result;
                 }, value);
             });
+            self.chosenWebinar(res()[0]);
             self.currentWebinarsArray(res());
         });
     };
     self.chosenWebinar = ko.observable({
-        Id: ko.observable("123"),
-        Name: ko.observable("sdfrfwf"),
-        VideoUrl: ko.observable("https://www.youtube.com/embed/Tv9YoYCKNoE"),
+        VideoUrl: "",
     });
+
     self.PlayWebinar = function () {
         self.chosenWebinar()
             .Id(this.Id)
@@ -49,5 +50,5 @@
 $(document).ready(function () {
     ko.applyBindings(LawWebinarsViewModel);
     LawWebinarsViewModel.getAllLaws();
-    LawWebinarsViewModel.getAllWebinars(2);
+    LawWebinarsViewModel.getAllWebinars(0);
 });

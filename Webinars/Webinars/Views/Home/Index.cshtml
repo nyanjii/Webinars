@@ -2,17 +2,23 @@
     ViewBag.Title = "Home Page";
 }
 
+<table>
+        <tr data-bind="template: { name: 'law-tab-template', foreach: lawsArray }"></tr>
+</table>
 
 
-<div data-bind="template: { name: 'law-tab-template', foreach: lawsArray }"></div>
 <script type="text/html" id="law-tab-template">
+            <td data-bind="click: $parent.getAllWebinars.bind($data)">
         <img src="../../Content/Images/icon-t36.png" />
         <p>Вебинары по <span data-bind="text: Name"></span></p>
+            </td>
 </script>
 
 <div data-bind="template: {name: 'list-item-video-template', foreach: webinars}"></div>
 
+<div>
 <div data-bind="template: { name: 'single-video-template', data: webinar }"></div>
+</div>
 
 <script type="text/html" id="single-video-template">
     <iframe width="560" height="315" 
