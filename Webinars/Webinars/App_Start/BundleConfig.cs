@@ -35,6 +35,9 @@ namespace Webinars
             bundles.Add(new StyleBundle("~/bundles/arcticcss").Include(
                 "~/Content/jquery.arcticmodal-0.3.css",
                 "~/Content/themes/simple.css"));
+
+            bundles.Add(new ScriptBundle("~bundles/underscore").Include(
+                "~/Scripts/underscore.js"));
         }
     }
 }
