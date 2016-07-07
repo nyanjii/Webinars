@@ -19,9 +19,6 @@
                 value.VideoImageUrl = ko.computed(function () {
                     return self.GetVideoImage(this.VideoUrl());
                 }, value);
-                if (index === 0)
-                    value.isChosen = ko.observable(true);
-                else value.isChosen = ko.observable(false);
             });
             self.currentWebinarsArray(res());
             var d = self.currentWebinarsArray()[0];
@@ -33,12 +30,6 @@
         Id: ko.observable("")
     });
     self.PlayWebinar = function (data) {
-        $.each(self.currentWebinarsArray(), function (index, value) {
-            if (value.Id() === self.chosenWebinar().Id)
-                value.isChosen(false);
-            if (value.Id() === data.Id())
-                value.isChosen(true);
-        });
         self.chosenWebinar({ VideoUrl: (data.VideoUrl()), Id: (data.Id()) });
     };
     self.GetVideoId = function (url) {
@@ -50,12 +41,6 @@
         var videoId = self.GetVideoId(videoUrl);
         var result = "http://img.youtube.com/vi/" + videoId + "/1.jpg";
         return result;
-    };
-    self.ChosenClass = function (chosen) {
-        return chosen() ? 'list-item-thumb-chosen' : 'list-item-thumb';
-    };
-    self.ChosenClassForLI = function (chosen) {
-        return chosen() ? 'video-li-content-chosen' : 'video-li-content';
     };
     return {
         laws: self.lawsArray,

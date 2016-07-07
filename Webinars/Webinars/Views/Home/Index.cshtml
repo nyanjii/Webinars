@@ -42,8 +42,8 @@
 
 <script type="text/html" id="list-item-video-template">
     <li class="video-list-item" data-bind="click: $parent.playWebinar">
-        <div data-bind="css: $parent.chosenClassForLi(isChosen)">
-            <img data-bind="attr: {src: VideoImageUrl}, css: $parent.chosenClass(isChosen) "/>
+        <div class="video-li-content" data-bind="css: {'video-li-content-chosen': $parent.webinar().Id === Id()}">
+            <img class="list-item-thumb" data-bind="attr: {src: VideoImageUrl}, css: {'list-item-thumb-chosen': $parent.webinar().Id === Id()} " />
             <span data-bind="text: Name"></span>
         </div>
     </li>
