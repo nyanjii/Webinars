@@ -22,7 +22,6 @@
             $.each(res(), function (index, value) {
                 value.VideoImageUrl = ko.computed(function () {
                     return self.GetVideoImage(this.VideoUrl());
-
                 }, value);
                 if (index === 0)
                     value.isChosen = ko.observable(true);
@@ -45,9 +44,6 @@
                 value.isChosen(true);
         });
         self.chosenWebinar({ VideoUrl: (data.VideoUrl()), Id: (data.Id()) });
-
-
-
     };
     self.GetVideoId = function (url) {
         var start = url.indexOf("embed/") + 6;
