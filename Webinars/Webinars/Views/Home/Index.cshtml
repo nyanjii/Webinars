@@ -22,8 +22,17 @@
 <!--Page templates-->
 <script type="text/html" id="law-tab-template">
        <li class="tab-item" data-bind="click: $parent.getAllWebinars">
-                <img src="../../Content/Images/icon-t36.png" />
-                <p>Вебинары по <span data-bind="text: Name"></span></p>
+           <div class="tab-content">
+               <div class="tab-img">
+                   <img src="../../Content/Images/icon-t36.png" />
+               </div>
+               <div class="tab-text"> 
+                   <p>
+                       Вебинары по
+                       <span class="tab-text" data-bind="text: Name"></span>
+                   </p>
+               </div>
+           </div>
         </li>
 </script>
 
@@ -43,7 +52,7 @@
 
 
 @section Scripts{
-    @Scripts.Render("~/Scripts/AppScripts/LawWebinarsViewModel.js");
+    @Scripts.Render("~/Scripts/AppScripts/LawWebinarsViewModel.js")
 }
 
 
