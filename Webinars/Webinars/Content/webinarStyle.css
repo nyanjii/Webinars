@@ -48,10 +48,17 @@
 }
 .list-item-thumb {
   margin: 8px;
-  background-color: #fff;
-  border: 3px solid #fff;
+  border: 3px;
   vertical-align: top;
-  width: 122px;
+  width: 300px;
+  border-color: transparent;
+}
+.list-item-thumb-chosen {
+  margin: 8px;
+  border: 3px;
+  vertical-align: top;
+  width: 300px;
+  border-color: #ec1c36;
 }
 .video-li-content {
   background-color: #F0F0F0;
@@ -65,7 +72,4 @@
 }
 .video-li-content:hover span {
   color: #fff;
-}
-.chosen-video {
-  border: 1px solid #ec1c36;
 }

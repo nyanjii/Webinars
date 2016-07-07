@@ -64,18 +64,28 @@
 .video-list-item{
     list-style: none;
 }
-.list-item-thumb{
-    margin: 8px;
-    background-color: @white;
-    border: 3px solid @white;
+
+
+
+.list-item(@border-colour: transparent){
+    margin: 8px;    
+    border: 3px;
     vertical-align: top;
-    width: 122px;
+    width: 300px;
+    border-color: @border-colour;
 }
+
+.list-item-thumb{
+    .list-item();
+        &-chosen{
+        .list-item(@red);
+    }
+}
+
 
 .video-li-content{
     background-color: @light-gray;
-    border-bottom: 1px solid @middle-gray;
-  
+    border-bottom: 1px solid @middle-gray;  
     &:hover{
         background-color: @middle-plus-gray;
         .list-item-thumb{
@@ -85,10 +95,4 @@
             color: @white;
         }
     }
-
-}
-
-
-.chosen-video{
-    border: 1px solid @red;
 }

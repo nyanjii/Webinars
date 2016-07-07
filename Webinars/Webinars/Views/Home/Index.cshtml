@@ -18,25 +18,24 @@
     </div>
 </div>
 
-<!--Page templates-->
 <script type="text/html" id="law-tab-template">
-       <li class="tab-item" data-bind="click: $parent.getAllWebinars">
-           <div class="tab-content">
-               <div class="tab-img">
+    <li class="tab-item" data-bind="click: $parent.getAllWebinars">
+        <div class="tab-content">
+            <div class="tab-img">
                 <img src="../../Content/Images/icon-t36.png" />
-               </div>
-               <div class="tab-text"> 
-                   <p>
-                       Вебинары по
-                       <span class="tab-text" data-bind="text: Name"></span>
-                   </p>
-               </div>
-           </div>
-        </li>
+            </div>
+            <div class="tab-text">
+                <p>
+                    Вебинары по
+                    <span class="tab-text" data-bind="text: Name"></span>
+                </p>
+            </div>
+        </div>
+    </li>
 </script>
 
 <script type="text/html" id="single-video-template">
-    <iframe width="560" height="315" 
+    <iframe width="560" height="315"
             data-bind="attr: {src : VideoUrl}"
             frameborder="0" allowfullscreen></iframe>
 </script>
@@ -44,15 +43,14 @@
 <script type="text/html" id="list-item-video-template">
     <li class="video-list-item" data-bind="click: $parent.playWebinar">
         <div class="video-li-content">
-            <img class="list-item-thumb" data-bind="attr: {src: VideoImageUrl}, style: {borderColor: isChosen() ? 'red' : 'white'}" />
-        <span data-bind="text: Name"></span>
+            <img class="list-item-thumb-chosen" data-bind="attr: {src: VideoImageUrl}" />
+            <span data-bind="text: Name"></span>
         </div>
     </li>
 </script>
 
-
 @section Scripts{
-    @Scripts.Render("~/Scripts/AppScripts/LawWebinarsViewModel.js")
+    @Scripts.Render("~/Scripts/AppScripts/LawWebinarsViewModel.js");
 }
 
 
