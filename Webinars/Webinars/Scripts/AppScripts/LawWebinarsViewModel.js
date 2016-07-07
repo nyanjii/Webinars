@@ -5,11 +5,18 @@
     self.GetAllLaws = function () {
         $.get('/Law/GetAllLaws', function (data) {
             var res = ko.mapping.fromJS(data);
+            $.each(res(), function (index,value) {
+                value.isActive = index===0 ? ko.observable(true) : ko.observable(false);
+            });
             self.lawsArray(res());
             self.GetAllWebinarsByLaw(self.lawsArray()[0]);
         });
     };
     self.GetAllWebinarsByLaw = function (data) {
+        $.each(self.lawsArray(), function (index, value) {
+            var res = value.Id()==data.Id()? true : false;
+            value.isActive(res);
+        });
         $.get('/Home/GetWebinarsByLaw', { id: data.Id }, function (data) {
             var res = ko.mapping.fromJS(data)
             $.each(res(), function (index, value) {
@@ -53,6 +60,7 @@
         var result = "http://img.youtube.com/vi/" + videoId + "/1.jpg";
         return result;
     };
+
     return {
         laws: self.lawsArray,
         webinars: self.currentWebinarsArray,

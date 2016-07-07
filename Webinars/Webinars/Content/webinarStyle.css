@@ -26,6 +26,9 @@
 .content .tab-panel .tab-item .tab-text {
   margin: 10px;
 }
+.content .tab-panel .active-tab {
+  background: #cacaca;
+}
 .content .tab-panel .tab-item:hover {
   background: #cacaca;
 }
@@ -48,17 +51,15 @@
 }
 .list-item-thumb {
   margin: 8px;
-  border: 3px;
+  border: 3px solid transparent;
   vertical-align: top;
-  width: 300px;
-  border-color: transparent;
+  width: 123px;
 }
 .list-item-thumb-chosen {
   margin: 8px;
-  border: 3px;
+  border: 3px solid #ec1c36;
   vertical-align: top;
-  width: 300px;
-  border-color: #ec1c36;
+  width: 123px;
 }
 .video-li-content {
   background-color: #F0F0F0;
