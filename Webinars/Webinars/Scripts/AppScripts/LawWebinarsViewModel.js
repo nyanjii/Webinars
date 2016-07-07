@@ -23,7 +23,6 @@
                 if (index === 0)
                     value.isChosen = ko.observable(true);
                 else value.isChosen = ko.observable(false);
-                console.log(value.isChosen());
             });            
             self.currentWebinarsArray(res());
             var d = self.currentWebinarsArray()[0];
