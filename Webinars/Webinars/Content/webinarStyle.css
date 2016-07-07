@@ -3,6 +3,7 @@
   src: url('fonts/Proxima Nova Regular.otf');
 }
 .content {
+  overflow: hidden;
   padding-top: 20px;
 }
 .content .tab-panel {

@@ -4,7 +4,7 @@
     self.currentWebinarsArray = ko.observableArray();
     self.GetAllLaws = function () {
         $.get('/Law/GetAllLaws', function (data) {
-            var res = ko.mapping.fromJS(data)
+            var res = ko.mapping.fromJS(data);
             self.lawsArray(res());
             self.GetAllWebinarsByLaw(self.lawsArray()[0]);
         });
@@ -27,13 +27,13 @@
             self.currentWebinarsArray(res());
             var d = self.currentWebinarsArray()[0];
             self.chosenWebinar({ VideoUrl: (d.VideoUrl()), Id: (d.Id()) });
+  
         });
     };
     self.chosenWebinar = ko.observable({
         VideoUrl: ko.observable(""),
         Id: ko.observable("")
     });
-
     self.PlayWebinar = function (data) {
         $.each(self.currentWebinarsArray(), function (index, value) {
             if (value.Id() === self.chosenWebinar().Id)
