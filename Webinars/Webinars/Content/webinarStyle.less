@@ -60,36 +60,42 @@
     height: @video-height;
     overflow-y: scroll;
 }
+
 .video-list-item{
     list-style: none;
 }
 
-
-
 .list-item(@border-colour: transparent){
     margin: 8px;    
-    border: 3px;
-    vertical-align: top;
-    width: 300px;
-    border-color: @border-colour;
+    border: 3px solid @border-colour;
+    width: 123px;
 }
 
 .list-item-thumb{
     .list-item();
-        &-chosen{
+    &-chosen{
         .list-item(@red);
     }
 }
 
+.video-list-content(@background-colour: @light-gray){
+    background-color: @background-colour;
+    border-bottom: 1px solid @middle-gray;    
+}
 
 .video-li-content{
-    background-color: @light-gray;
-    border-bottom: 1px solid @middle-gray;  
+    .video-list-content();
     &:hover{
         background-color: @middle-plus-gray;
         .list-item-thumb{
             background-color: @middle-plus-gray;
         }
+        span{
+            color: @white;
+        }
+    }
+    &-chosen{
+        .video-list-content(@middle-gray);
         span{
             color: @white;
         }

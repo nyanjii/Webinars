@@ -52,6 +52,12 @@
         var result = "http://img.youtube.com/vi/" + videoId + "/1.jpg";
         return result;
     };
+    self.ChosenClass = function (chosen) {
+        return chosen() ? 'list-item-thumb-chosen' : 'list-item-thumb';
+    };
+    self.ChosenClassForLI = function (chosen) {
+        return chosen() ? 'video-li-content-chosen' : 'video-li-content';
+    };
     return {
         laws: self.lawsArray,
         webinars: self.currentWebinarsArray,
@@ -59,7 +65,9 @@
         getAllWebinars: self.GetAllWebinarsByLaw,
         webinar: self.chosenWebinar,
         playWebinar: self.PlayWebinar,
-        getVideoUrlImage: self.GetVideoUrlImage
+        getVideoUrlImage: self.GetVideoUrlImage,
+        chosenClass: self.ChosenClass,
+        chosenClassForLi: self.ChosenClassForLI
     };
 }()
 

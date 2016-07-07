@@ -47,17 +47,13 @@
 }
 .list-item-thumb {
   margin: 8px;
-  border: 3px;
-  vertical-align: top;
-  width: 300px;
-  border-color: transparent;
+  border: 3px solid transparent;
+  width: 123px;
 }
 .list-item-thumb-chosen {
   margin: 8px;
-  border: 3px;
-  vertical-align: top;
-  width: 300px;
-  border-color: #ec1c36;
+  border: 3px solid #ec1c36;
+  width: 123px;
 }
 .video-li-content {
   background-color: #F0F0F0;
@@ -70,5 +66,12 @@
   background-color: #A3A3A3;
 }
 .video-li-content:hover span {
+  color: #fff;
+}
+.video-li-content-chosen {
+  background-color: #cacaca;
+  border-bottom: 1px solid #cacaca;
+}
+.video-li-content-chosen span {
   color: #fff;
 }
