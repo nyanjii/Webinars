@@ -19,7 +19,7 @@
 </div>
 
 <script type="text/html" id="law-tab-template">
-    <li class="tab-item" data-bind="click: $parent.getAllWebinars, css: { 'active-tab': isActive() }">
+    <li class="tab-item" data-bind="click: $parent.getAllWebinars, css: { 'active-tab': Id() == $parent.currentLaw() }">
         <div class="tab-content">
             <div class="tab-img">
                 <img src="../../Content/Images/icon-t36.png" />

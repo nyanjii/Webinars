@@ -2,21 +2,17 @@
     var self = this;
     self.lawsArray = ko.observableArray();
     self.currentWebinarsArray = ko.observableArray();
+    self.currentLawId = ko.observable("");
     self.GetAllLaws = function () {
         $.get('/Law/GetAllLaws', function (data) {
             var res = ko.mapping.fromJS(data);
-            $.each(res(), function (index,value) {
-                value.isActive = index===0 ? ko.observable(true) : ko.observable(false);
-            });
+            self.currentLawId(res()[0].Id());
             self.lawsArray(res());
             self.GetAllWebinarsByLaw(self.lawsArray()[0]);
         });
     };
     self.GetAllWebinarsByLaw = function (data) {
-        $.each(self.lawsArray(), function (index, value) {
-            var res = value.Id()==data.Id()? true : false;
-            value.isActive(res);
-        });
+        self.currentLawId(data.Id());
         $.get('/Home/GetWebinarsByLaw', { id: data.Id }, function (data) {
             var res = ko.mapping.fromJS(data)
             $.each(res(), function (index, value) {
@@ -74,7 +70,8 @@
         playWebinar: self.PlayWebinar,
         getVideoUrlImage: self.GetVideoUrlImage,
         chosenClass: self.ChosenClass,
-        chosenClassForLi: self.ChosenClassForLI
+        chosenClassForLi: self.ChosenClassForLI,
+        currentLaw:self.currentLawId
     };
 }()
 
