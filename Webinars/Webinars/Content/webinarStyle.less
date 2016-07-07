@@ -1,2 +1,45 @@
-﻿@corporate-red: #F14A5B;
-@corporate-dark-gray: #4c4c4e;
+﻿@red: #ec1c36; 
+@dark-gray: #4c4c4e; 
+@light-gray: #F0F0F0; 
+@middle-gray: #A3A3A3; 
+@middle-plus-gray: #A3A3A3;
+@white: #fff;
+body{ 
+
+}
+.video-list{
+    width: 530px;
+    height: 350px;
+    overflow-y: scroll;
+}
+.video-list-item{
+    list-style: none;
+}
+.list-item-thumb{
+    margin: 8px;
+    background-color: @white;
+    border: 3px solid @white;
+    vertical-align: top;
+    width: 122px;
+}
+
+.video-li-content{
+    background-color: @light-gray;
+    border-bottom: 1px solid @middle-gray;
+  
+    &:hover{
+        background-color: @middle-plus-gray;
+        .list-item-thumb{
+            background-color: @middle-plus-gray;
+        }
+        span{
+            color: @white;
+        }
+    }
+
+}
+
+
+.chosen-video{
+    border: 1px solid @red;
+}

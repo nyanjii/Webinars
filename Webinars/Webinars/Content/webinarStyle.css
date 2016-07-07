@@ -1,0 +1,31 @@
+﻿.video-list {
+  width: 530px;
+  height: 350px;
+  overflow-y: scroll;
+}
+.video-list-item {
+  list-style: none;
+}
+.list-item-thumb {
+  margin: 8px;
+  background-color: #fff;
+  border: 3px solid #fff;
+  vertical-align: top;
+  width: 122px;
+}
+.video-li-content {
+  background-color: #F0F0F0;
+  border-bottom: 1px solid #A3A3A3;
+}
+.video-li-content:hover {
+  background-color: #A3A3A3;
+}
+.video-li-content:hover .list-item-thumb {
+  background-color: #A3A3A3;
+}
+.video-li-content:hover span {
+  color: #fff;
+}
+.chosen-video {
+  border: 1px solid #ec1c36;
+}

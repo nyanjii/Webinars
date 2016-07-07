@@ -5,8 +5,7 @@
 <div class="content">
     <div class="content-header">
         <div class="tab-panel">
-            <ul data-bind="template: { name: 'law-tab-template', foreach: lawsArray }">
-            </ul>
+            <ul data-bind="template: { name: 'law-tab-template', foreach: lawsArray }"></ul>
         </div>
     </div>
     <div class="content-body">
@@ -14,33 +13,33 @@
             <div class="video-player" data-bind="template: { name: 'single-video-template', data: webinar }"></div>
         </div>
         <div class="right-col">
-            <div class="video-list" data-bind="template: {name: 'list-item-video-template', foreach: webinars}"></div>
+            <ul class="video-list" data-bind="template: {name: 'list-item-video-template', foreach: webinars}"></ul>
         </div>
     </div>
 </div>
 
 <!--Page templates-->
 <script type="text/html" id="law-tab-template">
-       <li class="tab-item" data-bind="click: $parent.getAllWebinars">
-                <img src="../../Content/Images/icon-t36.png" />
-                <p>Вебинары по <span data-bind="text: Name"></span></p>
-        </li>
+    <li class="tab-item" data-bind="click: $parent.getAllWebinars">
+        <img src="../../Content/Images/icon-t36.png" />
+        <p>Вебинары по <span data-bind="text: Name"></span></p>
+    </li>
 </script>
 
 <script type="text/html" id="single-video-template">
-    <iframe width="560" height="315" 
+    <iframe width="560" height="315"
             data-bind="attr: {src : VideoUrl}"
-            frameborder="0" allowfullscreen>
-    </iframe>
+            frameborder="0" allowfullscreen></iframe>
 </script>
 
 <script type="text/html" id="list-item-video-template">
     <li class="video-list-item" data-bind="click: $parent.playWebinar">
-        <span data-bind="text: Name"></span>
-        <img data-bind="attr: {src: VideoImageUrl}" />
+        <div class="video-li-content">
+            <img class="list-item-thumb" data-bind="attr: {src: VideoImageUrl}, style: {borderColor: isChosen() ? 'red' : 'white'}" />
+            <span data-bind="text: Name"></span>
+        </div>
     </li>
 </script>
-
 
 @section Scripts{
     @Scripts.Render("~/Scripts/AppScripts/LawWebinarsViewModel.js");

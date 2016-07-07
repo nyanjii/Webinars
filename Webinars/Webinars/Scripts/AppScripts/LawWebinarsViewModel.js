@@ -18,20 +18,31 @@
                     var start = url.indexOf("embed/") + 6;
                     var videoId = url.substring(start, url.length);
                     var result = "http://img.youtube.com/vi/" + videoId + "/1.jpg";
-                    console.log(result);
                     return result;
                 }, value);
+                if (index === 0)
+                    value.isChosen = ko.observable(true);
+                else value.isChosen = ko.observable(false);
+                console.log(value.isChosen());
             });            
             self.currentWebinarsArray(res());
-            self.chosenWebinar(self.currentWebinarsArray()[0]);
+            var d = self.currentWebinarsArray()[0];
+            self.chosenWebinar({ VideoUrl: (d.VideoUrl()), Id: (d.Id()) });
         });
     };
     self.chosenWebinar = ko.observable({
         VideoUrl: ko.observable(""),
+        Id : ko.observable("")
     });
 
     self.PlayWebinar = function (data) {
-        self.chosenWebinar({VideoUrl:(data.VideoUrl())});
+        $.each(self.currentWebinarsArray(), function (index, value) {
+            if (value.Id() === self.chosenWebinar().Id)
+                value.isChosen(false);
+            if (value.Id() === data.Id())
+                value.isChosen(true);
+        });
+        self.chosenWebinar({ VideoUrl: (data.VideoUrl()), Id: (data.Id()) });
     };
     return {
         laws: self.lawsArray,
@@ -47,5 +58,4 @@
 $(document).ready(function () {
     ko.applyBindings(LawWebinarsViewModel);
     LawWebinarsViewModel.getAllLaws();
-    //LawWebinarsViewModel.getAllWebinars(0);
 });
