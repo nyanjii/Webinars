@@ -1,6 +1,45 @@
-﻿.video-list {
+﻿@font-face {
+  font-family: ProximaNova;
+  src: url('fonts/Proxima Nova Regular.otf');
+}
+.content {
+  padding-top: 20px;
+}
+.content .tab-panel {
+  font-size: 14px;
+  color: black;
+  font-family: ProximaNova,Arial;
+  height: 139px;
+}
+.content .tab-panel .tab-item {
+  height: 135px;
+  width: 120px;
+  background: #F0F0F0;
+  display: inline-block;
+  text-align: center;
+}
+.content .tab-panel .tab-item .tab-img {
+  padding-top: 12px;
+  height: 60px;
+}
+.content .tab-panel .tab-item .tab-text {
+  margin: 10px;
+}
+.content .tab-panel .tab-item:hover {
+  background: #cacaca;
+}
+.content .content-body .left-col {
+  position: relative;
+  padding-left: 40px;
+}
+.content .content-body .right-col {
+  position: relative;
+  top: -320px;
+  left: 560px;
+}
+.video-list {
   width: 530px;
-  height: 350px;
+  height: 315px;
   overflow-y: scroll;
 }
 .video-list-item {
@@ -9,13 +48,16 @@
 .list-item-thumb {
   margin: 8px;
   background-color: #fff;
-  border: 3px solid #fff;
+  border: 0px solid #fff;
   vertical-align: top;
   width: 122px;
 }
+.list-item-thumb:after {
+  background-color: #fff;
+}
 .video-li-content {
   background-color: #F0F0F0;
-  border-bottom: 1px solid #A3A3A3;
+  border-bottom: 1px solid #cacaca;
 }
 .video-li-content:hover {
   background-color: #A3A3A3;
@@ -25,7 +67,4 @@
 }
 .video-li-content:hover span {
   color: #fff;
-}
-.chosen-video {
-  border: 1px solid #ec1c36;
 }

@@ -1,32 +1,82 @@
-﻿@red: #ec1c36; 
-@dark-gray: #4c4c4e; 
-@light-gray: #F0F0F0; 
-@middle-gray: #A3A3A3; 
+﻿@red: #ec1c36;
+@dark-gray: #4c4c4e;
+@light-gray: #F0F0F0;
+@middle-gray: #cacaca;
+@tab-panel-height: 139px;
+@tab-height: 135px;
+@tab-width: 120px;
 @middle-plus-gray: #A3A3A3;
 @white: #fff;
-body{ 
+@video-height:315px;
+@video-width:560px;
 
+ @font-face {
+        font-family:ProximaNova;
+        src:url('fonts/Proxima Nova Regular.otf');
+    }
+.content{
+    padding-top:20px;//поменять потом
+.tab-panel{
+    font-size:14px;
+    color:black;
+    font-family: ProximaNova,Arial;
+    height:@tab-panel-height;
+
+    .tab-item {
+        height: @tab-height;
+        width: @tab-width;
+        background:@light-gray;
+        display:inline-block;
+        text-align:center;
+            .tab-img{
+                 padding-top: 12px;
+                 height: 60px;
+            }
+            .tab-text
+            {
+                margin:10px;
+            }
+    }
+     .tab-item:hover{
+            background:@middle-gray;
+                    }   
+        }
+.content-body
+{
+    .left-col{
+        position:relative;
+        padding-left:40px;
+    }
+    .right-col{
+        position:relative;
+        top:-@video-height - 5px;
+        left: @video-width;
+    }
 }
+       }
+
 .video-list{
     width: 530px;
-    height: 350px;
+    height: @video-height;
     overflow-y: scroll;
 }
 .video-list-item{
     list-style: none;
 }
 .list-item-thumb{
-    margin: 8px;
+    margin: 8px;    
     background-color: @white;
-    border: 3px solid @white;
+    border: 0px solid @white;
     vertical-align: top;
     width: 122px;
+    &:after{
+        background-color: @white;
+    }
 }
 
 .video-li-content{
     background-color: @light-gray;
-    border-bottom: 1px solid @middle-gray;
-  
+    border-bottom: 1px solid @middle-gray;  
     &:hover{
         background-color: @middle-plus-gray;
         .list-item-thumb{
@@ -36,10 +86,4 @@ body{
             color: @white;
         }
     }
-
-}
-
-
-.chosen-video{
-    border: 1px solid @red;
 }

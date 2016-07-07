@@ -27,6 +27,7 @@ namespace Webinars
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/webinarStyle.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/arcticmodal").Include(
@@ -39,8 +40,6 @@ namespace Webinars
             bundles.Add(new ScriptBundle("~/bundles/underscore").Include(
                 "~/Scripts/underscore.js"));
 
-            bundles.Add(new StyleBundle("~/bundles/webinarstyle").Include(
-                "~/Content/webinarStyle.css"));
         }
     }
 }

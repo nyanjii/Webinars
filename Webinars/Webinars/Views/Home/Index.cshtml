@@ -18,11 +18,19 @@
     </div>
 </div>
 
-<!--Page templates-->
 <script type="text/html" id="law-tab-template">
     <li class="tab-item" data-bind="click: $parent.getAllWebinars">
-        <img src="../../Content/Images/icon-t36.png" />
-        <p>Вебинары по <span data-bind="text: Name"></span></p>
+        <div class="tab-content">
+            <div class="tab-img">
+                <img src="../../Content/Images/icon-t36.png" />
+            </div>
+            <div class="tab-text">
+                <p>
+                    Вебинары по
+                    <span class="tab-text" data-bind="text: Name"></span>
+                </p>
+            </div>
+        </div>
     </li>
 </script>
 
@@ -34,8 +42,8 @@
 
 <script type="text/html" id="list-item-video-template">
     <li class="video-list-item" data-bind="click: $parent.playWebinar">
-        <div class="video-li-content">
-            <img class="list-item-thumb" data-bind="attr: {src: VideoImageUrl}, style: {borderColor: isChosen() ? 'red' : 'white'}" />
+        <div class="video-li-content" data-bind="style:{backgroundColor: isChosen() ? '#D2D2D2' : '#F3F3F3'}">
+            <img class="list-item-thumb" data-bind="attr: {src: VideoImageUrl}, style: {border: isChosen() ? '3px solid red' : '0px'}" />
             <span data-bind="text: Name"></span>
         </div>
     </li>
