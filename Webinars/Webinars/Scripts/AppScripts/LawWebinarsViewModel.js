@@ -23,7 +23,7 @@
                 if (index === 0)
                     value.isChosen = ko.observable(true);
                 else value.isChosen = ko.observable(false);
-            });            
+            });
             self.currentWebinarsArray(res());
             var d = self.currentWebinarsArray()[0];
             self.chosenWebinar({ VideoUrl: (d.VideoUrl()), Id: (d.Id()) });
@@ -31,7 +31,7 @@
     };
     self.chosenWebinar = ko.observable({
         VideoUrl: ko.observable(""),
-        Id : ko.observable("")
+        Id: ko.observable("")
     });
 
     self.PlayWebinar = function (data) {
