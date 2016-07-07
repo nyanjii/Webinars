@@ -63,16 +63,24 @@
 .video-list-item{
     list-style: none;
 }
-.list-item-thumb{
+
+
+
+.list-item(@border-colour: transparent){
     margin: 8px;    
-    background-color: @white;
-    border: 0px solid @white;
+    border: 3px;
     vertical-align: top;
-    width: 122px;
-    &:after{
-        background-color: @white;
+    width: 300px;
+    border-color: @border-colour;
+}
+
+.list-item-thumb{
+    .list-item();
+        &-chosen{
+        .list-item(@red);
     }
 }
+
 
 .video-li-content{
     background-color: @light-gray;

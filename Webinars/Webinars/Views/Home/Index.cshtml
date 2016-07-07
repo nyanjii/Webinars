@@ -42,8 +42,8 @@
 
 <script type="text/html" id="list-item-video-template">
     <li class="video-list-item" data-bind="click: $parent.playWebinar">
-        <div class="video-li-content" data-bind="style:{backgroundColor: isChosen() ? '#D2D2D2' : '#F3F3F3'}">
-            <img class="list-item-thumb" data-bind="attr: {src: VideoImageUrl}, style: {border: isChosen() ? '3px solid red' : '0px'}" />
+        <div class="video-li-content">
+            <img class="list-item-thumb-chosen" data-bind="attr: {src: VideoImageUrl}" />
             <span data-bind="text: Name"></span>
         </div>
     </li>

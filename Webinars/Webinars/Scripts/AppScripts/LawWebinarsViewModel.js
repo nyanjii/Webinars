@@ -14,11 +14,8 @@
             var res = ko.mapping.fromJS(data)
             $.each(res(), function (index, value) {
                 value.VideoImageUrl = ko.computed(function () {
-                    url = this.VideoUrl();
-                    var start = url.indexOf("embed/") + 6;
-                    var videoId = url.substring(start, url.length);
-                    var result = "http://img.youtube.com/vi/" + videoId + "/1.jpg";
-                    return result;
+                    return self.GetVideoImage(this.VideoUrl());
+
                 }, value);
                 if (index === 0)
                     value.isChosen = ko.observable(true);
@@ -33,7 +30,6 @@
         VideoUrl: ko.observable(""),
         Id: ko.observable("")
     });
-
     self.PlayWebinar = function (data) {
         $.each(self.currentWebinarsArray(), function (index, value) {
             if (value.Id() === self.chosenWebinar().Id)
@@ -42,6 +38,19 @@
                 value.isChosen(true);
         });
         self.chosenWebinar({ VideoUrl: (data.VideoUrl()), Id: (data.Id()) });
+
+
+
+    };
+    self.GetVideoId = function (url) {
+        var start = url.indexOf("embed/") + 6;
+        var videoId = url.substring(start, url.length);
+        return videoId;
+    };
+    self.GetVideoImage = function (videoUrl) {
+        var videoId = self.GetVideoId(videoUrl);
+        var result = "http://img.youtube.com/vi/" + videoId + "/1.jpg";
+        return result;
     };
     return {
         laws: self.lawsArray,
